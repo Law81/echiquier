@@ -1,0 +1,11 @@
+services:
+  python-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+    env_file:
+      - .env
+    environment:
+      - WATCHFILES_FORCE_POLLING=true # Utile pour le rechargement automatique (hot-reload)
